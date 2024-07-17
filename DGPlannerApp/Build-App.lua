@@ -9,15 +9,19 @@ project "DGPlannerApp"
 
    includedirs
    {
-      "Source",
+      "src",
 
 	  -- Include Core
-	  "../SATSolver/Source"
+	"../vendor/imgui",
+	"../vendor/GLFW/include",
+	"../SATSolver/Source"
    }
 
    links
    {
-      "SATSolver"
+     	"ImGui",
+	"GLFW",
+      	"SATSolver"
    }
 
    targetdir ("../Binaries/" .. OutputDir .. "/%{prj.name}")
